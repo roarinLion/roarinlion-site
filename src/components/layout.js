@@ -1,55 +1,45 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import * as React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
+import React, { useState } from "react"
+import merge from "lodash.merge"
+import get from "lodash.get"
+// the full theme object
+import baseTheme from "./styled/theme"
 import Header from "./header"
-import "./layout.css"
+import { ThemeProvider } from "styled-components"
+import { Typography } from "./styled/typography"
+
+// options for different color modes
+const modes = [
+    "light",
+    "dark",
+    // more than two modes can follow...
+]
+
+// merge the color mode with the base theme
+// to create a new theme object
+const getTheme = mode =>
+    merge({}, baseTheme, {
+        colors: get(baseTheme.colors.modes, mode, baseTheme.colors),
+    })
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+    const [mode, setMode] = useState(modes[0])
+    const theme = getTheme(mode)
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+    return (
+        <>
+            <ThemeProvider theme={theme}>
+                <Typography />
+                <Header siteTitle="Newport Morors" />
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+                <main>{children}</main>
+                <footer>
+                    © {new Date().getFullYear()}, Built with
+                    {` `}
+                    <a href="https://www.gatsbyjs.com">Gatsby</a>
+                </footer>
+            </ThemeProvider>
+        </>
+    )
 }
 
 export default Layout
