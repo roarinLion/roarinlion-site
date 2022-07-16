@@ -1,20 +1,29 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../hooks/seo"
-import { Container } from "../components/styled/grid.styled"
-import { Title } from "../components/styled/typography"
-import StyledCard from "../components/card.styled"
+import { Headline, Title } from "../components/styled/typography"
+import StyledCard from "../components/styled/card.styled"
+import { Col } from "../components/styled/grid.styled"
 
 const IndexPage = () => (
-    <Layout>
+    <>
         <Seo title="Home" />
-        <Container>
-            <Title>Used Cars</Title>
-            <StyledCard mt="4" bg="red" color="primary" width={[1]}>
-                testttt
-            </StyledCard>
-        </Container>
-    </Layout>
+        <Layout>
+            <Title>some title...</Title>
+            <Col p="3">
+                <StyledCard
+                    borderRadius={8}
+                    my="5"
+                    p="3"
+                    mt="4"
+                    bg="orange"
+                    width={[1 / 3]}
+                >
+                    <Headline> a card with a headline </Headline>
+                </StyledCard>
+            </Col>
+        </Layout>
+    </>
 )
 
 export default IndexPage

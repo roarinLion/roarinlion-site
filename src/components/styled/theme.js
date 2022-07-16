@@ -1,15 +1,27 @@
 /* this file contains the theme modes, for style defaults look in ./config.styled.js */
-import { colors } from "./config.styled"
-
-export default {
+export const theme = {
     colors: {
-        primary: "red",
+        text: "green",
+        bgColor: "#292929",
         modes: {
-            dark: {
-                primary: colors.primaryDark,
-            },
             light: {
-                primary: colors.primary,
+                primary: "green",
+                info: "lightblue",
+                bgColor: "#fff",
+                text: "#292929",
+            },
+            dark: {
+                primary: "blue",
+                info: "lightblue",
+                bgColor: "#292929",
+                text: "#fff",
+            },
+            blue: {
+                primary: "darkblue",
+                info: "lightblue",
+                bgColor: "#0e79b7",
+                text: "#fff",
+                fontFamily: "serif",
             },
         },
     },

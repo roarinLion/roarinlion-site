@@ -1,62 +1,7 @@
-import styled, { createGlobalStyle, css } from "styled-components"
+import styled, { css } from "styled-components"
 
 //we should always hold the font files locally. there are many free fonts online including google fonts.
-import fontBold from "../../assets/fonts/Ubuntu-Bold.ttf"
-import fontBoldItalic from "../../assets/fonts/Ubuntu-Bold.ttf"
-import fontRegular from "../../assets/fonts/Ubuntu-Regular.ttf"
-import fontItalic from "../../assets/fonts/Ubuntu-Italic.ttf"
-import fontLight from "../../assets/fonts/Ubuntu-Light.ttf"
-import fontLightItalic from "../../assets/fonts/Ubuntu-LightItalic.ttf"
-
-const Typography = createGlobalStyle`
-  @font-face {
-    font-family: 'Ubuntu';
-    src: url(${fontBold});
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Ubuntu';
-    src: url(${fontBoldItalic});
-    font-style: italic;
-    font-weight: 600;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Ubuntu';
-    src: url(${fontRegular});
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Ubuntu';
-    src: url(${fontItalic});
-    font-style: italic;
-    font-weight: 400;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Ubuntu';
-    src: url(${fontLight});
-    font-style: normal;
-    font-weight: 200;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Ubuntu'!important;
-    src: url(${fontLightItalic})!important;
-    font-style: italic!important;
-    font-weight: 200!important;
-    font-display: swap;
-  }
-`
+import { theme } from "./theme"
 
 const Super = styled.h1`
   font-size: 4rem!important;
@@ -80,7 +25,7 @@ const Headline = styled.h1`
   font-size: 3.5rem!important;
   font-weight: 600!important;
   margin: auto!important;
-  color: ${({ theme }) => theme.primary};
+  color: ${theme.colors.text};
   ${props =>
       props.center &&
       css`
@@ -165,4 +110,4 @@ const Paragraph = styled.p`
   }
 `
 
-export { Typography, Super, Headline, Title, Subtitle, Paragraph }
+export { Super, Headline, Title, Subtitle, Paragraph }

@@ -2,41 +2,73 @@ import React, { useState } from "react"
 import merge from "lodash.merge"
 import get from "lodash.get"
 // the full theme object
-import baseTheme from "./styled/theme"
+import { theme } from "./styled/theme"
 import Header from "./header"
 import { ThemeProvider } from "styled-components"
-import { Typography } from "./styled/typography"
+import { GlobalStyles } from "./styled/globalStyles"
+import { Container } from "./styled/grid.styled"
+import Footer from "./styled/footer"
 
 // options for different color modes
 const modes = [
     "light",
     "dark",
-    // more than two modes can follow...
+    "blue",
+    // TODO: we can add more modes for the main demo theme.
 ]
 
 // merge the color mode with the base theme
 // to create a new theme object
+
 const getTheme = mode =>
-    merge({}, baseTheme, {
-        colors: get(baseTheme.colors.modes, mode, baseTheme.colors),
+    merge({}, theme, {
+        colors: get(theme.colors.modes, mode, theme.colors),
     })
 
 const Layout = ({ children }) => {
     const [mode, setMode] = useState(modes[0])
     const theme = getTheme(mode)
-
     return (
         <>
             <ThemeProvider theme={theme}>
-                <Typography />
-                <Header siteTitle="Newport Morors" />
-
-                <main>{children}</main>
-                <footer>
-                    © {new Date().getFullYear()}, Built with
-                    {` `}
-                    <a href="https://www.gatsbyjs.com">Gatsby</a>
-                </footer>
+                <Container bg="primary">
+                    <Container maxWidth="1200px" minHeight="100vh">
+                        <GlobalStyles />
+                        <Header />
+                        <button
+                            className="pt-3"
+                            onClick={() => setMode("light")}
+                        >
+                            {mode === "light" ? (
+                                <> Light mode!!</>
+                            ) : (
+                                <> click me...</>
+                            )}
+                        </button>
+                        <button
+                            className="pt-3"
+                            onClick={() => setMode("dark")}
+                        >
+                            {mode === "dark" ? (
+                                <> Dark mode!!</>
+                            ) : (
+                                <> click me...</>
+                            )}
+                        </button>
+                        <button
+                            className="pt-3"
+                            onClick={() => setMode("blue")}
+                        >
+                            {mode === "blue" ? (
+                                <> Blue mode!!</>
+                            ) : (
+                                <> click me...</>
+                            )}
+                        </button>
+                        <main>{children}</main>
+                    </Container>
+                </Container>
+                <Footer />
             </ThemeProvider>
         </>
     )
