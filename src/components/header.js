@@ -5,6 +5,7 @@ import { Col, Container, Row } from "./styled/grid.styled"
 import StyledIcon from "../components/styled/icon.styled"
 import { RiMenu2Fill, RiQuestionnaireLine } from "react-icons/ri"
 import StyledCard from "./styled/card.styled"
+import StyledButton, { buttons } from "./styled/button.styled"
 
 const Header = () => {
     // Define state

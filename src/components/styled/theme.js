@@ -1,24 +1,29 @@
 export const theme = {
     colors: {
+        textLight: "#fff",
+        textDark: "#292929",
         modes: {
             light: {
                 //these are our basic colors based off bootstrap
-                primary: "green",
-                info: "lightblue",
-                warning: "yellow",
-                danger: "red",
+                primary: "#0048AF",
+                secondary: "#73877B",
+                info: "#00E8FC",
+                success: "#9FD356",
+                warning: "#F9C846",
+                danger: "#D64045",
                 //these are our backgrounds
                 bgColor: "#F4F3EF",
                 bgColorCard: "#fff",
                 text: "#292929",
-                boxShadow: "0px 0px 15px rgba(31, 73, 125, 0.8)",
             },
             dark: {
                 //these are our basic colors based off bootstrap
-                primary: "blue",
-                info: "lightblue",
-                warning: "yellow",
-                danger: "red",
+                primary: "#0048AF",
+                secondary: "#73877B",
+                info: "#00E8FC",
+                success: "#9FD356",
+                warning: "#F9C846",
+                danger: "#D64045",
                 //these are our backgrounds
                 bgColor: "#090A0B",
                 bgColorCard: "#26292F",
