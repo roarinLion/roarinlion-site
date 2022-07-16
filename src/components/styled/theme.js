@@ -1,26 +1,37 @@
-/* this file contains the theme modes, for style defaults look in ./config.styled.js */
 export const theme = {
     colors: {
-        text: "green",
-        bgColor: "#292929",
         modes: {
             light: {
+                //these are our basic colors based off bootstrap
                 primary: "green",
                 info: "lightblue",
-                bgColor: "#fff",
+                warning: "yellow",
+                danger: "red",
+                //these are our backgrounds
+                bgColor: "#F4F3EF",
+                bgColorCard: "#fff",
                 text: "#292929",
+                boxShadow: "0px 0px 15px rgba(31, 73, 125, 0.8)",
             },
             dark: {
+                //these are our basic colors based off bootstrap
                 primary: "blue",
                 info: "lightblue",
-                bgColor: "#292929",
+                warning: "yellow",
+                danger: "red",
+                //these are our backgrounds
+                bgColor: "#090A0B",
+                bgColorCard: "#26292F",
                 text: "#fff",
             },
             blue: {
+                //these are our basic colors based off bootstrap
                 primary: "darkblue",
                 info: "lightblue",
-                bgColor: "#0e79b7",
-                text: "#fff",
+                warning: "yellow",
+                //these are our backgrounds
+                bgColor: "#ccecff",
+                text: "info",
                 fontFamily: "serif",
             },
         },

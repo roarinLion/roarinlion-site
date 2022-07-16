@@ -21,17 +21,18 @@ const modes = [
 // to create a new theme object
 
 const getTheme = mode =>
-    merge({}, theme, {
+    merge(theme, {
         colors: get(theme.colors.modes, mode, theme.colors),
     })
 
 const Layout = ({ children }) => {
     const [mode, setMode] = useState(modes[0])
     const theme = getTheme(mode)
+
     return (
         <>
             <ThemeProvider theme={theme}>
-                <Container bg="primary">
+                <Container bg="bgColor">
                     <Container maxWidth="1200px" minHeight="100vh">
                         <GlobalStyles />
                         <Header />
