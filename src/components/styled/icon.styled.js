@@ -2,15 +2,14 @@ import { color, fontSize, position, space } from "styled-system"
 import styled from "styled-components/macro"
 
 const StyledIcon = styled.i`
-    border: 1px solid #f7f7f7;
     cursor: pointer;
-    box-shadow: 0 0 1px gray;
     padding-top: 1rem;
     border-radius: 8px;
-    transition: transform 0.2s;
+    transition: "all 2s ease 1s";
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3);
     ${fontSize} ${color} ${space} ${position};
-    &:hover {
-        transform: scale(1.5);
+    &::hover {
+        transform: scale(0.8);
     }
 `
 export default StyledIcon

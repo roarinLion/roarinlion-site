@@ -1,11 +1,12 @@
 import styled, { css } from "styled-components"
 import { theme } from "./theme"
 import { darken } from "polished"
-import { space } from "styled-system"
+import { color, space } from "styled-system"
 
 const StyledButton = styled.div`
     border-radius: 12px;
     ${space}
+    ${color}
     ${props =>
         props.primary &&
         css`
@@ -14,6 +15,13 @@ const StyledButton = styled.div`
             background-color: ${theme.colors.primary};
             box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3),
                 0 7px 10px -5px ${darken(0.1, theme.colors.primary)};
+            transition: 0.2s ease-in;
+            &:hover {
+                cursor: pointer;
+                background-color: ${darken(0.02, theme.colors.primary)};
+                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3),
+                    0 7px 5px -5px ${darken(0.1, theme.colors.primary)};
+            }
         `}
          ${props =>
         props.secondary &&
@@ -23,6 +31,13 @@ const StyledButton = styled.div`
             border: 1px solid ${darken(0.04, theme.colors.secondary)};
             box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3),
                 0 7px 10px -5px ${darken(0.3, theme.colors.secondary)};
+            transition: 0.2s ease-in;
+            &:hover {
+                cursor: pointer;
+                background-color: ${darken(0.02, theme.colors.secondary)};
+                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3),
+                    0 7px 5px -5px ${darken(0.1, theme.colors.secondary)};
+            }
         `}
          ${props =>
         props.info &&
@@ -32,6 +47,13 @@ const StyledButton = styled.div`
             border: 1px solid ${darken(0.04, theme.colors.info)};
             box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3),
                 0 7px 10px -5px ${darken(0.3, theme.colors.info)};
+            transition: 0.2s ease-in;
+            &:hover {
+                cursor: pointer;
+                background-color: ${darken(0.02, theme.colors.info)};
+                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3),
+                    0 7px 5px -5px ${darken(0.1, theme.colors.info)};
+            }
         `}
             ${props =>
         props.success &&
@@ -41,6 +63,13 @@ const StyledButton = styled.div`
             border: 1px solid ${darken(0.04, theme.colors.success)};
             box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3),
                 0 7px 10px -5px ${darken(0.3, theme.colors.success)};
+            transition: 0.2s ease-in;
+            &:hover {
+                cursor: pointer;
+                background-color: ${darken(0.02, theme.colors.success)};
+                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3),
+                    0 7px 5px -5px ${darken(0.1, theme.colors.success)};
+            }
         `}
     ${props =>
         props.warning &&
@@ -50,6 +79,13 @@ const StyledButton = styled.div`
             border: 1px solid ${darken(0.04, theme.colors.warning)};
             box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3),
                 0 7px 10px -5px ${darken(0.3, theme.colors.warning)};
+            transition: 0.2s ease-in;
+            &:hover {
+                cursor: pointer;
+                background-color: ${darken(0.02, theme.colors.warning)};
+                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3),
+                    0 7px 5px -5px ${darken(0.1, theme.colors.warning)};
+            }
         `}
          ${props =>
         props.danger &&
@@ -59,6 +95,13 @@ const StyledButton = styled.div`
             border: 1px solid ${darken(0.04, theme.colors.danger)};
             box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3),
                 0 7px 10px -5px ${darken(0.3, theme.colors.danger)};
+            transition: 0.2s ease-in;
+            &:hover {
+                cursor: pointer;
+                background-color: ${darken(0.02, theme.colors.danger)};
+                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3),
+                    0 7px 5px -5px ${darken(0.1, theme.colors.danger)};
+            }
         `}
 `
 //     primary: {

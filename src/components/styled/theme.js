@@ -18,7 +18,7 @@ export const theme = {
             },
             dark: {
                 //these are our basic colors based off bootstrap
-                primary: "#0048AF",
+                primary: "#000",
                 secondary: "#73877B",
                 info: "#00E8FC",
                 success: "#9FD356",
@@ -38,26 +38,9 @@ export const theme = {
                 bgColor: "#ccecff",
                 text: "info",
                 fontFamily: "serif",
+                bgColorCard: "#26292F",
             },
         },
     },
     space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 }
-
-// const theme = {
-
-//     dark: {
-//         textPrimary: colors.primaryDark,
-//         background: "#090A0B",
-//         navBackground: "#2A2D34",
-//         cardBackground: "#2A2D34",
-//         textSecondary: "#7d7d7d",
-//         buttonPrimary: "#FAFAFA",
-//         buttonGhost: "transparent",
-//         cardBgPrimary: "#004e89",
-//         buttonTxt: "#fff",
-//         cardShadow: "-1px 3px 5px 0px rgba(21,21,21,0.86)",
-//     },
-// }
-
-// export default theme

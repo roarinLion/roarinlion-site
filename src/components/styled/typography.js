@@ -1,7 +1,5 @@
 import styled, { css } from "styled-components"
-
-//we should always hold the font files locally. there are many free fonts online including google fonts.
-import { theme } from "./theme"
+import { color } from "styled-system"
 
 const Super = styled.h1`
   font-size: 4rem!important;
@@ -25,7 +23,7 @@ const Headline = styled.h1`
   font-size: 3.5rem!important;
   font-weight: 600!important;
   margin: auto!important;
-  color: ${theme.colors.text};
+  ${color}
   ${props =>
       props.center &&
       css`
@@ -40,6 +38,7 @@ const Title = styled.h2`
   font-weight: 600!important;
   margin-top: 0;
   margin-bottom: .65rem;
+  ${color}
   ${props =>
       props.center &&
       css`

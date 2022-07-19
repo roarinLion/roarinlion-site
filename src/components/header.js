@@ -3,9 +3,10 @@ import React from "react"
 import { useState } from "react"
 import { Col, Container, Row } from "./styled/grid.styled"
 import StyledIcon from "../components/styled/icon.styled"
-import { RiMenu2Fill, RiQuestionnaireLine } from "react-icons/ri"
+import { MdMenuOpen, MdHelpOutline } from "react-icons/md"
+
 import StyledCard from "./styled/card.styled"
-import StyledButton, { buttons } from "./styled/button.styled"
+import { Link } from "gatsby"
 
 const Header = () => {
     // Define state
@@ -22,29 +23,37 @@ const Header = () => {
     }
     return (
         <Container bg="primary">
-            <Container maxWidth="1200px" p={3} bg={"bgColor"}>
+            <Container maxWidth="1200px" py={3} px={2} bg={"bgColor"}>
                 <Row>
-                    <Col textAlign="left" width={[1 / 3]}>
+                    <Col textAlign="left" pt={1} width={[1 / 3]}>
                         <StyledIcon
                             onClick={handleOpen}
                             fontSize={[6, 6, 7]}
-                            color="primary"
-                            style={{
-                                transition: "all 2s ease 1s",
-                            }}
+                            color="text"
+                            px="3"
+                            bg="bgColorCard"
                         >
-                            <RiMenu2Fill />
+                            <MdMenuOpen />
                         </StyledIcon>
                     </Col>
                     <Col textAlign="center" width={[1 / 3]}>
-                        <StaticImage
-                            alt="logo"
-                            src="../assets/images/logo.png"
-                        />
+                        <Link to="/">
+                            <StaticImage
+                                alt="logo"
+                                src="../assets/images/logo.png"
+                                maxWidth="200px"
+                            />
+                        </Link>
                     </Col>
-                    <Col textAlign="right" width={[1 / 3]}>
-                        <StyledIcon fontSize={[6, 6, 7]} color="info">
-                            <RiQuestionnaireLine />
+                    <Col textAlign="right" pt={1} width={[1 / 3]}>
+                        <StyledIcon
+                            onClick={handleOpen}
+                            fontSize={[6, 6, 7]}
+                            color="text"
+                            px="3"
+                            bg="bgColorCard"
+                        >
+                            <MdHelpOutline />
                         </StyledIcon>
                     </Col>
                 </Row>
@@ -54,6 +63,7 @@ const Header = () => {
                     <Col width={[1]}>
                         <StyledCard
                             p={[2, 3, 4]}
+                            color="text"
                             bg="bgColorCard"
                             className="toggle-btn"
                             width="100%"
@@ -65,6 +75,7 @@ const Header = () => {
                         >
                             open modal biatch!!!{" "}
                             <p onClick={handleClose}>(close modal biatch.)</p>
+                            <Link to="/inventory-list-page">Inventory</Link>
                         </StyledCard>
                     </Col>
                 </>

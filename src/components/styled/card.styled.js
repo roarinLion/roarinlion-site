@@ -3,7 +3,7 @@ import { space, layout, color, border, shadow } from "styled-system"
 
 const StyledCard = styled.div`
     overflow: hidden;
-    box-shadow: ${({ theme }) => theme.boxShadow};
+    border-radius: 8px;
     ${space} ${layout} ${color} ${border} ${shadow};
 `
 
