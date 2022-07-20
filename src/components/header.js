@@ -8,6 +8,33 @@ import { MdMenuOpen, MdHelpOutline } from "react-icons/md"
 import StyledCard from "./styled/card.styled"
 import { Link } from "gatsby"
 
+const NavItems = [
+    {
+        title: "DMS",
+        dest: "/auto-dealer-software",
+    },
+    {
+        title: "BHPH",
+        dest: "/buy-here-pay-here-dealer-software",
+    },
+    {
+        title: "Websites",
+        dest: "/auto-dealer-websites",
+    },
+    {
+        title: "Services",
+        dest: "/auto-dealer-services",
+    },
+    {
+        title: "Blog",
+        dest: "/blog",
+    },
+    {
+        title: "Contact",
+        dest: "/contact",
+    },
+]
+
 const Header = () => {
     // Define state
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -73,8 +100,21 @@ const Header = () => {
                                 top: "0px",
                             }}
                         >
-                            open modal biatch!!!{" "}
-                            <p onClick={handleClose}>(close modal biatch.)</p>
+                            open modal!!!{" "}
+                            <ul>
+                                {NavItems.map(navItem => (
+                                    <Link key={navItem.title} to={navItem.dest}>
+                                        <li>{navItem.title}</li>
+                                    </Link>
+                                ))}
+                            </ul>
+                            <button
+                                onKeyDown={handleClose}
+                                onClick={handleClose}
+                            >
+                                (close modal.)
+                            </button>
+                            {}
                             <Link to="/inventory-list-page">Inventory</Link>
                         </StyledCard>
                     </Col>

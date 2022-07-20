@@ -8,7 +8,6 @@ import { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "./styled/globalStyles"
 import { Container } from "./styled/grid.styled"
 import Footer from "./styled/footer"
-import PropTypes from "prop-types"
 
 // options for different color modes
 const modes = [
